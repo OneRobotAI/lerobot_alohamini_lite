@@ -139,16 +139,19 @@ SSH into the Raspberry Pi, install the conda environment, then perform the follo
 
 ``` bash
 python -m lerobot.robots.alohamini.lekiwi_host \
-  --arm_profile so-arm-5dof
+  --arm_profile so-arm-5dof \
+  --robot_model alohamini1
 ```
 
 ##### AM‑ARM (6‑DoF)
 
 ``` bash
 python -m lerobot.robots.alohamini.lekiwi_host \
-  --arm_profile am-arm-6dof
+  --arm_profile am-arm-6dof \
+  --robot_model alohamini2
 ```
 
+> `--robot_model` selects the lift-axis leadscrew pitch: `alohamini1` = 84 mm/rev, `alohamini2` = 131 mm/rev. Defaults to `alohamini1` if omitted.
 
 If executing for the first time, the system will prompt us to calibrate the robot arm. Position the robot arm as shown in the image, press Enter, then rotate each joint 90 degrees left, then 90 degrees right, then press Enter
 ![Calibration](examples/alohamini/media/mid_position_so100.png)  
@@ -184,14 +187,16 @@ Raspberry Pi side:
 
 ``` bash
 python -m lerobot.robots.alohamini.lekiwi_host \
-  --arm_profile so-arm-5dof
+  --arm_profile so-arm-5dof \
+  --robot_model alohamini1
 ```
 
 ##### AM‑ARM (6‑DoF)
 
 ``` bash
 python -m lerobot.robots.alohamini.lekiwi_host \
-  --arm_profile am-arm-6dof
+  --arm_profile am-arm-6dof \
+  --robot_model alohamini2
 ```
 
 PC side:
