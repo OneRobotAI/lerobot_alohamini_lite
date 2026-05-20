@@ -156,6 +156,7 @@ from lerobot.robots import (  # noqa: F401
     so_follower,
     unitree_g1 as unitree_g1_robot,
 )
+from lerobot.robots import alohamini as alohamini_robot  # noqa: F401  — registers alohamini / alohamini_client types
 from lerobot.rollout import RolloutConfig, build_rollout_context, create_strategy
 from lerobot.teleoperators import (  # noqa: F401
     Teleoperator,

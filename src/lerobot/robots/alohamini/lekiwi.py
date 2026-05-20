@@ -140,7 +140,7 @@ class LeKiwi(Robot):
     """
 
     config_class = LeKiwiConfig
-    name = "lekiwi"
+    name = "alohamini"
 
     def __init__(self, config: LeKiwiConfig):
         super().__init__(config)

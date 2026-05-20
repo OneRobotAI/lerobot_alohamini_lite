@@ -41,7 +41,7 @@ logging.basicConfig(
 
 class LeKiwiClient(Robot):
     config_class = LeKiwiClientConfig
-    name = "lekiwi_client"
+    name = "alohamini_client"
 
     def __init__(self, config: LeKiwiClientConfig):
         import zmq

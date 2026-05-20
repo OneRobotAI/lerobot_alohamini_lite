@@ -40,7 +40,7 @@ def lekiwi_cameras_config() -> dict[str, CameraConfig]:
     }
 
 
-@RobotConfig.register_subclass("lekiwi")
+@RobotConfig.register_subclass("alohamini")
 @dataclass
 class LeKiwiConfig(RobotConfig):
     left_port: str = "/dev/am_arm_follower_left"  # port to connect to the bus
@@ -88,7 +88,7 @@ class LeKiwiHostConfig:
 
 
 
-@RobotConfig.register_subclass("lekiwi_client")
+@RobotConfig.register_subclass("alohamini_client")
 @dataclass
 class LeKiwiClientConfig(RobotConfig):
     # Network Configuration
