@@ -22,21 +22,21 @@ from ..config import RobotConfig
 
 def lekiwi_cameras_config() -> dict[str, CameraConfig]:
     return {
-        # "forward": OpenCVCameraConfig(
-        #     index_or_path="/dev/am_camera_forward", fps=30, width=640, height=480, rotation=Cv2Rotation.NO_ROTATION
-        # ),
+          "forward": OpenCVCameraConfig(
+              index_or_path="/dev/video3", fps=30, width=640, height=480, rotation=Cv2Rotation.NO_ROTATION
+          ),
         # "backward": OpenCVCameraConfig(
         #     index_or_path="/dev/am_camera_backward", fps=30, width=640, height=480, rotation=Cv2Rotation.NO_ROTATION
         # ),
         # "chest": OpenCVCameraConfig(
         #     index_or_path="/dev/am_camera_chest", fps=30, width=640, height=480, rotation=Cv2Rotation.NO_ROTATION
         # ),
-        # "wrist_left": OpenCVCameraConfig(
-        #     index_or_path="/dev/am_camera_wrist_left", fps=30, width=640, height=480, rotation=Cv2Rotation.NO_ROTATION
-        # ),
-        # "wrist_right": OpenCVCameraConfig(
-        #     index_or_path="/dev/am_camera_wrist_right", fps=30, width=640, height=480, rotation=Cv2Rotation.NO_ROTATION
-        # ),
+          #"wrist_left": OpenCVCameraConfig(
+           #   index_or_path="/dev/video2", fps=30, width=640, height=480, rotation=Cv2Rotation.NO_ROTATION
+          #),
+          "wrist_right": OpenCVCameraConfig(
+              index_or_path="/dev/video0", fps=30, width=640, height=480, rotation=Cv2Rotation.NO_ROTATION
+          ),
     }
 
 
@@ -51,6 +51,7 @@ class LeKiwiConfig(RobotConfig):
     # alohamini1   – so-arm-5dof,          base sts3215, lift sts3215, lead=84 mm/rev
     # alohamini2   – am-follower-6dof,     base sts3215, lift sts3095, lead=131 mm/rev
     # alohamini2pro– am-follower-6dof-hd,  base sts3250, lift sts3095, lead=131 mm/rev
+    # alohamini2lite– am-follower-6dof-lite (全 STS3215 6 轴), base sts3215, lift sts3215, lead=131 mm/rev
     robot_model: str = "alohamini1"
 
     # `max_relative_target` limits the magnitude of the relative positional target vector for safety purposes.

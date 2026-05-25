@@ -32,7 +32,7 @@ def main():
     parser.add_argument("--remote_ip", type=str, default="127.0.0.1")
     parser.add_argument("--robot_id", type=str, default="lekiwi")
     parser.add_argument("--robot_model", type=str, default="alohamini1",
-                        choices=["alohamini1", "alohamini2", "alohamini2pro"],
+                        choices=["alohamini1", "alohamini2", "alohamini2pro", "alohamini2lite"],
                         help="Must match the robot_model on the Pi host side")
     args = parser.parse_args()
 

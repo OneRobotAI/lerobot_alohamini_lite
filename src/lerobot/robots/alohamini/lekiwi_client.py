@@ -81,8 +81,8 @@ class LeKiwiClient(Robot):
         self._is_connected = False
         self.logs = {}
 
-        # Arm state keys depend on DOF, which is determined by robot_model.
-        _6DOF_MODELS = {"alohamini2", "alohamini2pro"}
+        # Arm state keys depend on DOF, which is determined by robot_model.适配ST3215增加alohamini2lite
+        _6DOF_MODELS = {"alohamini2", "alohamini2pro","alohamini2lite"}
         if config.robot_model in _6DOF_MODELS:
             self._left_arm_state_keys = (
                 "arm_left_shoulder_pan.pos",

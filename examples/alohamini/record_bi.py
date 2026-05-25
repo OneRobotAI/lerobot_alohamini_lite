@@ -38,19 +38,23 @@ def main():
         choices=["so-arm-5dof", "am-leader-6dof"],
         help="Leader arm profile selector.",
     )
+    parser.add_argument("--robot_model", type=str, default="alohamini1",
+                        choices=["alohamini1", "alohamini2", "alohamini2pro", "alohamini2lite"],
+                        help="Must match the robot_model on the Pi host side")
     parser.add_argument("--resume", action="store_true", help="Resume recording on existing dataset")
 
     args = parser.parse_args()
 
     # === Robot and teleop config ===
-    robot_config = LeKiwiClientConfig(remote_ip=args.remote_ip, id=args.robot_id)
+    robot_config = LeKiwiClientConfig(remote_ip=args.remote_ip, id=args.robot_id,
+                                  robot_model=args.robot_model)
     leader_arm_config = BiSOLeaderConfig(
         left_arm_config=SOLeaderConfig(
-            port="/dev/am_arm_leader_left",
+            port="/dev/ttyACM0",
             arm_profile=args.arm_profile,
         ),
         right_arm_config=SOLeaderConfig(
-            port="/dev/am_arm_leader_right",
+            port="/dev/ttyACM1",
             arm_profile=args.arm_profile,
         ),
         id=args.leader_id,

@@ -72,6 +72,17 @@ _ARM_PROFILES: dict[str, tuple[tuple[str, int, str, MotorNormMode | None], ...]]
         ("wrist_roll", 6, "sts3215", None),
         ("gripper", 7, "sts3215", MotorNormMode.RANGE_0_100),
     ),
+    # 👇 在这里插入新 profile-适配ST3215
+    "am-follower-6dof-lite": (
+        ("shoulder_pan", 1, "sts3215", None),
+        ("shoulder_lift", 2, "sts3215", None),
+        ("elbow_flex", 3, "sts3215", None),
+        ("wrist_flex", 4, "sts3215", None),
+        ("wrist_yaw", 5, "sts3215", None),
+        ("wrist_roll", 6, "sts3215", None),
+        ("gripper", 7, "sts3215", MotorNormMode.RANGE_0_100),
+    ),
+    
     "am-follower-6dof-hd": (
         ("shoulder_pan", 1, "sts3250", None),
         ("shoulder_lift", 2, "sts3095", None),
@@ -127,6 +138,13 @@ _ROBOT_SPECS: dict[str, dict] = {
         "base_motor": "sts3250",
         "lift_motor": "sts3095",
         "lead_mm_per_rev": 131.0,
+    },
+    # 👇 在这里插入新 spec-适配ST3215
+    "alohamini2lite": {
+        "arm_profile": "am-follower-6dof-lite",
+        "base_motor": "sts3215",
+        "lift_motor": "sts3215",
+        "lead_mm_per_rev": 84.0,
     },
 }
 
